@@ -16,6 +16,7 @@
 ## 🧠 Core (non-obvious bits)
 
 - **Isolation boundary:** a child can't reach into the root and the root can't reach into the child — data crosses **only** through declared inputs and outputs.
+- **BUT providers are the exception:** a child module **inherits the parent's provider configurations automatically** — you do **not** pass providers like variables. (Exam trap: *providers are inherited, variables are not.*)
 - **In (parent → child):** `module "net" { … env = var.environment }` — the child must declare `variable "env"`. → [variable block](../04-configuration/05-variable-block.md)
 - **Out (child → parent):** child declares `output "subnet_id" { value = … }`; parent uses **`module.net.subnet_id`**. → [output block](../04-configuration/07-output-block.md)
 - To bubble a child value **all the way up** (e.g. to CLI output), the **root** must re-declare its own `output` that references `module.net.subnet_id`.
@@ -47,6 +48,7 @@ output "subnet_1" {                  # exposes a value to the parent
 ## ⚠️ Common traps
 
 - **Root has NO access to child data by default** — the child must `output` it, and you reference `module.<name>.<output>`.
+- **Providers are inherited, variables are NOT** — don't assume a child sees the parent's variables (it doesn't), and don't try to "pass" the default provider (it's already inherited).
 - Passing an argument the child didn't declare as a `variable` → error (inputs must match).
 - A child `output` is visible to its **direct parent** only; to expose further up, re-output at each level.
 

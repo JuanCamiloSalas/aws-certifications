@@ -16,7 +16,7 @@
 
 - **`TF_VAR_<name>`** → sets input variable `name` (e.g. `TF_VAR_region=us-east-1` fills `var.region`). The part after the prefix must match the variable name **exactly** (case-sensitive).
 - **Precedence:** env vars are **near the bottom** — beaten by `terraform.tfvars`, `*.auto.tfvars`, and `-var`/`-var-file`. A CLI `-var` always wins over `TF_VAR_*`.
-- **`TF_LOG`** = verbosity: `TRACE` (most detail) → `DEBUG` → `INFO` → `WARN` → `ERROR`. **`TF_LOG_PATH`** writes the log to a file (`TF_LOG_CORE` / `TF_LOG_PROVIDER` target just one side).
+- **`TF_LOG`** = verbosity: `TRACE` (most detail) → `DEBUG` → `INFO` → `WARN` → `ERROR` (also `JSON` for machine-readable output). **`TF_LOG_PATH`** writes the log to a file (**appended**, auto-created; needs `TF_LOG`/`TF_LOG_CORE`/`TF_LOG_PROVIDER` also set). `TF_LOG_CORE` / `TF_LOG_PROVIDER` target just one side. _(S15 debugging is fully covered by this card.)_
 - **Provider creds** via env (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, …) keep secrets out of `.tf` and out of version control.
 - **`TF_CLI_ARGS`** (or `TF_CLI_ARGS_<name>`) injects default flags into every / one command; **`TF_INPUT=0`** disables interactive prompts (useful in CI).
 

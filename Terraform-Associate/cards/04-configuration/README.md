@@ -41,7 +41,7 @@
 - ✅ **Outputs**: `value`, `sensitive`, `description`; consumed by parent modules. → card 07 _(S7)_
 - ✅ **Terraform block**: `required_version`, `required_providers`, `backend`; version constraints `=`/`>=`/`~>`. → card 08 _(S7)_
 - ✅ Resource addressing & **references** (`resource.name.attr`), implicit dependencies. → card 01
-- ✅ **Types & complex structures**: string/number/bool, list, map, set. → card 05 _(object/tuple not in S7)_
+- ✅ **Types & complex structures**: string/number/bool, list, map, set + structural `object`/`tuple`. → card 05 _(object/tuple added from S17 exam-prep)_
 - ✅ **Local values** (`locals` define / `local.` ref) and when to use them vs variables. → card 11 _(S10)_
 - ✅ **Built-in functions** (`name(args)`; no user-defined; type/numeric/string/collection/CIDR) — test with `terraform console`. → card 09 _(S10)_
 - ✅ **Dynamic values / interpolation** (`${…}`, compose var+local+data; data sources read-only). → card 10 _(S10)_

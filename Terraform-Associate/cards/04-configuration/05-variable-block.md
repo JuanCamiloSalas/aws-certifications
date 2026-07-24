@@ -20,6 +20,10 @@
   - **`list(...)`** — ordered, **index from 0** → `var.x[0]`.
   - **`map(...)`** — named keys → `var.x["key"]` or `var.x.key`.
   - **`set(...)`** — **unordered + unique**, **no index access** (convert to a list first).
+- **Structural types** (fixed shape, **mixed** value types):
+  - **`object({ name = string, port = number })`** — a **fixed schema** with named attributes of different types.
+  - **`tuple([string, number, bool])`** — a **fixed-length** sequence with a type per position.
+  - vs `map` = any number of keys, **all same type** · `list` = any length, all same type.
 - **`default`** present → variable is **optional**; absent → **required** (Terraform prompts interactively, or errors in automation).
 - Variables kill hardcoding: the same config produces dev/test/prod by swapping values.
 

@@ -51,7 +51,8 @@
 | S8 Hands-On Labs | refuerzan 03/04 (gotchas de lab si surgen) |
 | S9 Managing State · S11 Refactoring State | `06-state` |
 | S12 Modules | `05-modules` |
-| S11 (import) · S13 Dependencies · S15 Troubleshooting | `07-maintain` |
+| S11 (import) · S13 Dependencies | `07-maintain` |
+| S15 Troubleshooting | refuerza `03` (`TF_LOG` ya cardeado en `03/09`) — **sin cards nuevas** |
 | S16 HCP Terraform | `08-hcp-terraform` |
 | S17 Exam Prep | repaso global — rellenar huecos, no cards nuevas |
 

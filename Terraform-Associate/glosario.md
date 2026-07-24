@@ -15,6 +15,9 @@
 | **Backend local** | **Backend remoto** | local = `.tfstate` en disco (solo tú) · remoto (S3 con `use_lockfile` / HCP) = compartido + **locking** + cifrado. ⚠️ DynamoDB locking **deprecated** |
 | **CLI workspaces** | **HCP workspaces** | CLI = varios states de **una misma config** (`terraform workspace`) · HCP = unidad de trabajo en la nube (state + variables + runs propios) |
 | **Root module** | **Child module** | root = el directorio actual donde corres Terraform · child = el que invocas con un bloque `module` |
+| **Providers (heredados)** | **Variables (pasadas)** | el child **hereda** las configs de provider del padre automáticamente · las variables **NO** se heredan: hay que pasarlas explícitas en el `module` block y declararlas en el child |
+| **`map` / `list`** | **`object` / `tuple`** | map/list = nº variable de elementos, **mismo tipo** · object = **schema fijo** con atributos nombrados de tipos distintos · tuple = **longitud fija**, un tipo por posición |
+| **`cloud` block** | **`backend` block** | HCP: el `cloud` block **reemplaza** al `backend` — **no** se pueden usar ambos |
 | **Input variable** | **Local value** | variable = entrada parametrizable (desde fuera) · local = valor calculado **dentro** de la config, no se pasa desde fuera |
 | **`local-exec`** | **`remote-exec`** | `local-exec` = comando en **tu** máquina · `remote-exec` = comando **en el recurso** creado (vía SSH/WinRM) |
 | **`terraform`** | **HCP Terraform** | `terraform` = la CLI/binario open source · HCP Terraform = plataforma SaaS (remote runs, state, registry, Sentinel) |
@@ -71,7 +74,13 @@
 | **Provisioner** | Ejecuta scripts al crear/destruir un recurso (**último recurso**) |
 | **Taint / `-replace`** | Marca un recurso para recrearlo (`-replace=ADDR` es lo moderno) |
 | **Import** | Trae un recurso existente bajo gestión de Terraform. Moderno: **`import` block** (previsualizable en plan) · legacy: `terraform import <addr> <id>` (CLI, sin plan, modifica el state al instante) |
-| **Sentinel** | Policy as code en HCP Terraform |
+| **Sentinel** | Policy as code de HashiCorp (HCP Terraform). Corre **tras el plan, antes del apply**. 3 niveles: advisory / soft mandatory / hard mandatory (este último **no** se puede override) |
+| **OPA** | Open Policy Agent (CNCF), lenguaje **Rego**. Alternativa a Sentinel; 2 niveles: advisory / mandatory |
+| **Policy set** | Grupo de políticas de **un solo framework** (todo Sentinel o todo OPA); scope global/project/workspace |
+| **`cloud` block** | En `terraform {}`, conecta con HCP: `organization` + `workspaces` (por `name`/`project` o por `tags`) |
+| **`terraform login`** | Autentica la CLI con HCP; guarda el token en `~/.terraform.d/credentials.tfrc.json` (texto plano). Alternativa CI/CD: env `TF_TOKEN_app_terraform_io` |
+| **Execution mode** (HCP) | Por workspace: **Remote** (default, corre en HCP) · **Local** (solo state, NO evalúa variables del workspace) · **Agent** (self-hosted, infra privada) |
+| **HCP token types** | User (multi-org) · Team (corre plan/apply) · Organization (gestiona, **no** corre) · Audit (read-only) |
 
 ## 🔢 Operadores de versión
 

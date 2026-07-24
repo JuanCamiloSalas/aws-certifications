@@ -32,9 +32,9 @@
 | 3 | Use the core Terraform workflow | [Bloque 03](./cards/03-core-workflow/README.md) ✅ _(S4·S5)_ |
 | 4 | Read and write configuration | [Bloque 04](./cards/04-configuration/README.md) ✅ _(S6·S7·S10·S13·S14; gap menor: dynamic blocks)_ |
 | 5 | Use and create modules | [Bloque 05](./cards/05-modules/README.md) ✅ _(S12)_ |
-| 6 | Learn about Terraform state management | [Bloque 06](./cards/06-state/README.md) 🟡 _(S9 + S11 `moved`/`removed` + S14 securing state hechos; falta `terraform_remote_state`)_ |
-| 7 | Maintain infrastructure with Terraform | [Bloque 07](./cards/07-maintain/README.md) 🟡 _(S11 `import` + S13 `depends_on`/`lifecycle` hechos; falta S15 troubleshooting · replace/provisioners)_ |
-| 8 | Use HCP Terraform | _pendiente_ |
+| 6 | Learn about Terraform state management | [Bloque 06](./cards/06-state/README.md) ✅ _(local/remote backend, locking, drift/refresh, moved/removed, securing state)_ |
+| 7 | Maintain infrastructure with Terraform | [Bloque 07](./cards/07-maintain/README.md) ✅ _(sub-obj 004: import · inspect state · verbose logging — todos cubiertos; `depends_on`/`lifecycle` extra)_ |
+| 8 | Use HCP Terraform | [Bloque 08](./cards/08-hcp-terraform/README.md) ✅ _(S16 esenciales; projects/var-sets/teams/health en repaso ligero)_ |
 
 ## 📺 Temario del curso (referencia)
 
@@ -54,9 +54,9 @@
 | 12 — Terraform Modules | 8 | 1h 33m | 5 | 05 |
 | 13 — Managing Resource Behavior and Dependencies | 5 | 41m | 7, 4 | 07, 04 |
 | 14 — Securing Terraform Configurations | 9 | 1h 10m | 4, 6 | 04, 06 |
-| 15 — Terraform Troubleshooting | 3 | 12m | 7 | 07 |
+| 15 — Terraform Troubleshooting | 3 | 12m | 7 | 03 (refuerzo — `TF_LOG` ya en 03/09, sin cards) |
 | 16 — HCP Terraform | 18 | 3h 07m | 8 | 08 |
-| 17 — Exam Prep Essentials: What to Know for Each Objective | 11 | 1h 46m | todos | — |
+| 17 — Exam Prep Essentials: What to Know for Each Objective | 11 | 1h 46m | todos | — (repaso; gap-fills a 04/05·05·08) |
 
 ## 🃏 Mazo de estudio
 
