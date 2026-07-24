@@ -1,3 +1,6 @@
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)
+
 # `moved` vs `removed` vs `import` (state refactoring)
 
 > One-line summary: three **declarative** blocks to change how Terraform tracks infra **without the CLI**: **`moved`** = rename/relocate in state · **`removed`** = stop managing (keep it alive) · **`import`** = adopt existing infra. All run inside plan/apply and are deleted afterward.
@@ -54,3 +57,8 @@
 - [`removed` block](../cards/06-state/07-removed-block.md)
 - [`import` block](../cards/07-maintain/01-import-block.md)
 - [Inspecting State](../cards/06-state/03-inspecting-state.md) (legacy `state mv` / `state rm`)
+
+---
+
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)

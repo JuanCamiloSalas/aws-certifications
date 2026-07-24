@@ -1,3 +1,6 @@
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)
+
 # Validation mechanisms: variable validation vs precondition vs postcondition vs check
 
 > One-line summary: four defensive layers at different stages — **variable validation** (input), **precondition** (before create), **postcondition** (after create), **check** (last, non-blocking). The first three **stop** the run; `check` only **warns**.
@@ -38,3 +41,8 @@ All four use the same pair: **`condition`** (must be `true`) + **`error_message`
 - [Variable block & types](../cards/04-configuration/05-variable-block.md)
 - [`lifecycle` meta-argument](../cards/07-maintain/03-lifecycle.md)
 - [`terraform validate`](../cards/03-core-workflow/07-terraform-validate.md)
+
+---
+
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)

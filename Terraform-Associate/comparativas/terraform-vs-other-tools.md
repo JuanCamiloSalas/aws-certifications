@@ -1,3 +1,6 @@
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)
+
 # Terraform vs other tools (IaC peers vs Config Management)
 
 > Terraform is often confused with two families: other **IaC** tools (similar) and **configuration-management** tools (different but complementary).
@@ -28,3 +31,8 @@
 - [What is Terraform?](../cards/02-fundamentals/01-what-is-terraform.md)
 - [Terraform vs other tools card](../cards/02-fundamentals/04-terraform-vs-other-tools.md)
 </content>
+
+---
+
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)

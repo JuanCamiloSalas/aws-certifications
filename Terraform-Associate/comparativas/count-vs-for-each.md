@@ -1,3 +1,6 @@
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)
+
 # `count` vs `for_each`
 
 > One-line summary: **`count`** = N copies by **numeric index** (list-backed, reorders/recreates) · **`for_each`** = one per **key** from a map/set (stable identity). Prefer `for_each` unless you just need N interchangeable copies or a 0/1 toggle.
@@ -32,3 +35,8 @@
 - [`count` meta-argument](../cards/04-configuration/12-count-meta-argument.md)
 - [`for_each` meta-argument](../cards/04-configuration/13-for_each-meta-argument.md)
 - [Built-in functions](../cards/04-configuration/09-built-in-functions.md) (`toset()` to feed `for_each`)
+
+---
+
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)

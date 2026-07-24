@@ -1,3 +1,6 @@
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)
+
 # Secret protection techniques: what protects what
 
 > One-line summary: no single technique covers everything — **`sensitive`** hides logs, **env vars / external sources** keep secrets out of git, **ephemeral / write-only** keep them out of state. Stack them.
@@ -40,3 +43,8 @@
 - [Env vars & external sources](../cards/04-configuration/17-secrets-env-vars-and-external-sources.md)
 - [Ephemeral values & write-only arguments](../cards/04-configuration/18-ephemeral-values-and-write-only-arguments.md)
 - [Securing state files](../cards/06-state/08-securing-state-files.md)
+
+---
+
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)

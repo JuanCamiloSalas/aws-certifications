@@ -1,3 +1,6 @@
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)
+
 # Sentinel vs OPA (HCP Terraform policy frameworks)
 
 > One-line summary: two policy-as-code frameworks for HCP Terraform, same goal (gate the plan before apply) — **Sentinel** = HashiCorp, 3 enforcement levels · **OPA** = open source (CNCF), Rego language, 2 levels. You can use both in the same workspace.
@@ -37,3 +40,8 @@
 ## Linked cards
 
 - [Policy enforcement — Sentinel & OPA](../cards/08-hcp-terraform/05-policy-enforcement-sentinel-opa.md)
+
+---
+
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)

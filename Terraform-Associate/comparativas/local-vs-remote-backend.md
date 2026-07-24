@@ -1,3 +1,6 @@
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)
+
 # Local vs Remote backend
 
 > One-line summary: **local** = `terraform.tfstate` on your disk (solo/learning); **remote** = shared state (S3/azurerm/gcs/HCP) with locking + encryption (teams/prod).
@@ -32,3 +35,8 @@
 - [Terraform State](../cards/06-state/01-terraform-state.md)
 - [Backends & State Storage](../cards/06-state/02-backends-and-state-storage.md)
 - [`terraform init`](../cards/03-core-workflow/02-terraform-init.md) (`-migrate-state` / `-reconfigure`)
+
+---
+
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)

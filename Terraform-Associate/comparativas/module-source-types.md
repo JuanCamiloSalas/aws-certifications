@@ -1,3 +1,6 @@
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)
+
 # Module source types: registry vs Git vs local
 
 > One-line summary: **registry** = versioned, shareable public/private modules (`version` allowed) · **Git** = a repo, pinned with `?ref=` · **local** = a path in the same project, no versioning.
@@ -30,3 +33,8 @@
 - [Module sources & versioning](../cards/05-modules/03-module-sources-and-versioning.md)
 - [Calling modules — the `module` block](../cards/05-modules/02-module-block.md)
 - [Terraform block & version constraints](../cards/04-configuration/08-terraform-block.md) (`=` / `>=` / `~>`)
+
+---
+
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)

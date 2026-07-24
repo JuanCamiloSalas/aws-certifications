@@ -1,3 +1,6 @@
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)
+
 # CLI workspaces vs HCP Terraform workspaces
 
 > One-line summary: **CLI workspaces** = multiple state files for **one config + one backend** (lightweight env switch). **HCP workspaces** = a full cloud working directory (its own config, variables, state, VCS, runs). Same word, different thing — the exam exploits this.
@@ -29,3 +32,8 @@
 
 - [Workspaces (CLI)](../cards/06-state/05-workspaces.md)
 - HCP Terraform → block 08 (S16, pending)
+
+---
+
+[![](https://img.shields.io/badge/<_Comparativas-7B42BC?style=for-the-badge)](./README.md)
+[![](https://img.shields.io/badge/Terraform-175074?style=for-the-badge)](../README.md)
