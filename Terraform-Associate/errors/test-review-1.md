@@ -15,6 +15,8 @@
 
 > **Takeaway:** the "soft" concepts (IaC, patterns, T/F) were the weak spot, not the syntax. 5 of 8 misses are definition/pattern questions, not code.
 
+**Legend:** ✅ correct option · ❌ wrong option · **← my answer** marks what I actually selected.
+
 ---
 
 # 🔴 1. Infrastructure as Code (IaC)
@@ -22,7 +24,7 @@
 ## 1.1 Multi-cloud benefit = **consistent workflow**, not the state (Q2)
 **Sample question:** *"An org runs on AWS, Azure and GCP; the team struggles with different tools/interfaces/workflows. Which Terraform capability solves this?"*
 - ✅ **"Consistent workflow to manage multiple providers"** — a single language/flow (`init→plan→apply`) over any provider is what standardizes the deployment.
-- ❌ **State files provide centralized tracking** — state **tracks** resources, it does not **standardize** the process. Trap: sounds right but doesn't address the stated problem (different tools/interfaces).
+- ❌ **State files provide centralized tracking** — state **tracks** resources, it does not **standardize** the process. Trap: sounds right but doesn't address the stated problem (different tools/interfaces). ← my answer
 - ❌ Reusable modules — they help, but the keyword in the stem is *standardize the deployment process* → workflow.
 > [!TIP]
 > When the stem says *standardize / consistent process across clouds* → answer **provider-agnostic workflow**. State = tracking; modules = reuse; neither one "standardizes the process".
@@ -31,7 +33,7 @@
 ## 1.2 Immutable infrastructure **eliminates** config drift → True (Q37)
 **Sample question:** *"T/F: the immutable pattern (replacing servers instead of modifying them in place) eliminates config drift because resources never change after provisioning."*
 - ✅ **True.** Immutable = treat infra as disposable; an update **replaces** the resource with a new version → there is no window for drift to accumulate. It also simplifies rollback (redeploy the previous version).
-- ❌ I picked **False.** I confused "resources never change" (correct under immutable) with "it is impossible for them to ever change".
+- ❌ **False** — I read "resources never change" as "it is impossible for them to ever change". Immutable means *not modified in place*, not *never replaced*. ← my answer
 > [!TIP]
 > **Mutable** = patch in place → drift accumulates. **Immutable** = replace → **eliminates** drift. Terraform supports immutable naturally (declarative approach + `replace`).
 > 📇 [Card: What is IaC](../cards/01-iac/01-what-is-iac.md)
@@ -39,7 +41,7 @@
 ## 1.3 Terraform shows the changes in the **Plan** stage (Q51)
 **Sample question:** *"At which point of the workflow does Terraform show you what changes it will make before modifying infrastructure?"*
 - ✅ **Plan stage** — it compares current state vs desired and shows the **execution plan** (create/update/delete) before touching anything.
-- ❌ I picked **Apply stage** — apply **executes** the plan; the "final confirmation" apply shows is the approval, not the **preview** of changes.
+- ❌ **Apply stage** — apply **executes** the plan; the "final confirmation" apply shows is the approval, not the **preview** of changes. ← my answer
 > [!TIP]
 > **`plan` = preview** (what it would do). **`apply` = execute** (and ask for approval of the plan). The question "when does Terraform *show* changes" → **plan**, always.
 > 📇 [Card: Declarative vs imperative](../cards/01-iac/03-declarative-vs-imperative.md) · workflow in [03-core-workflow](../cards/03-core-workflow/README.md)
@@ -51,8 +53,8 @@
 ## 4.1 `depends_on` — when to use it (select two) (Q19)
 **Sample question:** *"When should you use `depends_on` instead of implicit detection? (select two)"*
 - ✅ **Dependencies outside Terraform's resource graph** (external systems that must be operational first).
-- ✅ **B needs A operational but doesn't reference it** (hidden dependency, no `A.id` in the config). ← I got this one.
-- ❌ I picked **"prevent parallel creation"** — `depends_on` **only orders** create/destroy according to dependencies; it is **not** a parallelism control.
+- ✅ **B needs A operational but doesn't reference it** (hidden dependency, no `A.id` in the config). ← my answer
+- ❌ **"Prevent parallel creation"** — `depends_on` **only orders** create/destroy according to dependencies; it is **not** a parallelism control. ← my answer
 > [!TIP]
 > `depends_on` = **hidden / external dependencies** Terraform can't infer from references. It does **not** control parallelism and is not a substitute for a direct reference (that's the implicit one, always preferred).
 > 📇 [Card: depends_on](../cards/07-maintain/02-depends-on.md)
@@ -60,7 +62,7 @@
 ## 4.2 `for_each` over a list → must convert with `toset()` (Q27)
 **Sample question:** *"Given `variable type = list(string)`, you want one `kubernetes_namespace` per entry with `for_each`. Which config handles the type conversion?"*
 - ✅ `for_each = toset(var.namespaces)` — `for_each` requires a **set** or a **map**; `toset()` converts the list → set. (`tomap()` would also work for a map.)
-- ❌ I picked `for_each = var.namespaces` (list directly) → **error**: `for_each` does not accept a `list`.
+- ❌ `for_each = var.namespaces` (list directly) → **error**: `for_each` does not accept a `list`. ← my answer
 - ❌ `tolist(...)` — still a list, `for_each` won't accept it.
 ```hcl
 resource "kubernetes_namespace" "ns" {
@@ -75,8 +77,8 @@ resource "kubernetes_namespace" "ns" {
 ## 4.3 Securing the state (select two) (Q49)
 **Sample question:** *"Which statements about securing state files are true? (select two)"*
 - ✅ **Remote backends are recommended over local** for production (security, access, collaboration).
-- ✅ **State locking prevents concurrent modifications** that would corrupt the state. ← got it.
-- ❌ I picked **"write-only arguments prevent ALL secrets from being stored in state"** — a write-only argument keeps **that specific** secret out of state, **not every** secret in it. "All" is the trap.
+- ✅ **State locking prevents concurrent modifications** that would corrupt the state. ← my answer
+- ❌ **"Write-only arguments prevent ALL secrets from being stored in state"** — a write-only argument keeps **that specific** secret out of state, **not every** secret in it. "All" is the trap. ← my answer
 - ❌ Distractor: *"encrypted state removes the need for the `sensitive` flag"* — false; encryption (at rest) and marking `sensitive` (accidental exposure in output/logs) are distinct, complementary layers.
 > [!TIP]
 > State security = **remote backend + locking + encryption**. `sensitive` and encryption **don't replace each other**. Write-only/ephemeral keep **one** secret out of state, they don't make it "secret-free".
@@ -89,7 +91,7 @@ resource "kubernetes_namespace" "ns" {
 ## 5.1 GitHub as a module source: valid shorthand (Q44)
 **Sample question:** *"T/F: you can use a GitHub repo as a source with `source = \"github.com/hashicorp/example\"`."*
 - ✅ **True.** Terraform detects GitHub via the **shorthand** `github.com/...` (no protocol prefix), or with the explicit git prefix `git::https://github.com/hashicorp/example.git`.
-- ❌ I picked **False** — I assumed the protocol prefix was always required. The `github.com/...` shorthand is a recognized special case.
+- ❌ **False** — assumes the protocol prefix is always required. The `github.com/...` shorthand is a recognized special case. ← my answer
 > [!TIP]
 > Valid Git sources: `github.com/org/repo` (shorthand), `git::https://...`, `git::ssh://...`. Plain HTTPS works too. Pin a version with `?ref=v1.2.0`, or `//subdir` for a subfolder.
 > 📇 [Card: Module sources & versioning](../cards/05-modules/03-module-sources-and-versioning.md) · [comparison: module-source-types](../comparativas/module-source-types.md)
@@ -102,8 +104,8 @@ resource "kubernetes_namespace" "ns" {
 **Sample question:** *"Which workflow types exist for managing runs in HCP Terraform? (select three)"*
 - ✅ **VCS-driven** (integrates Git → store/track/version).
 - ✅ **API-driven** (programmatic interaction via API calls → automation).
-- ✅ **CLI-driven** (the one I failed to select).
-- ❌ I picked **Agent-driven** — "Agent" is an **execution mode** (Remote / Local / **Agent** for isolated networks), **not** one of the three *run workflows*. Close distractor.
+- ✅ **CLI-driven** — the one I missed.
+- ❌ **Agent-driven** — "Agent" is an **execution mode** (Remote / Local / **Agent** for isolated networks), **not** one of the three *run workflows*. Close distractor. ← my answer
 > [!TIP]
 > **3 run workflows** = **VCS · CLI · API**. **3 execution modes** = **Remote · Local · Agent**. Don't confuse *how the run is triggered* (workflow) with *where it executes* (mode). "SSH-driven" and "Agent-driven" are decoys.
 > 📇 [Card: HCP workspaces (workflows)](../cards/08-hcp-terraform/03-hcp-workspaces.md)

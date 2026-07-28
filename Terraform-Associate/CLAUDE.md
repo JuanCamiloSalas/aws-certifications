@@ -14,6 +14,10 @@ A diferencia del **SAA** (escenarios: "¿qué servicio encaja?" → cards que ab
 
 **Cards en inglés** (el examen es solo en inglés → inmersión). **Los test reviews de `errors/` también en inglés** (reproducen preguntas del examen → misma inmersión). La prosa meta y los READMEs (incluido `errors/README.md`, que es índice), en español.
 
+## Test reviews (`errors/test-review-N.md`)
+
+Una entrada por fallo. Cada opción es una línea `✅`/`❌ **opción** — por qué`, y la que el usuario marcó lleva el sufijo **`← my answer`** (también en las ✅ que sí acertó). No mezclar "esto fue lo que marqué" dentro de la explicación (nada de "I picked…"): la explicación es del distractor, el marcador es del usuario. Leyenda al principio del archivo.
+
 ## Template y secciones
 
 - Plantilla: [`cards/_TEMPLATE.md`](./cards/_TEMPLATE.md).
