@@ -12,7 +12,7 @@ A diferencia del **SAA** (escenarios: "¿qué servicio encaja?" → cards que ab
 
 ## Idioma
 
-**Cards en inglés** (el examen es solo en inglés → inmersión). La prosa meta y los READMEs, en español.
+**Cards en inglés** (el examen es solo en inglés → inmersión). **Los test reviews de `errors/` también en inglés** (reproducen preguntas del examen → misma inmersión). La prosa meta y los READMEs (incluido `errors/README.md`, que es índice), en español.
 
 ## Template y secciones
 
