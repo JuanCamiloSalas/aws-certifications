@@ -8,7 +8,7 @@
 
 | Test | Fecha | Score | Review |
 |---|---|---|---|
-| _(none yet)_ | — | — | — |
+| #1 | 2026-07-25 | 85% (49/57) ✅ | [test-review-1.md](./test-review-1.md) |
 
 ---
 
@@ -18,14 +18,14 @@
 
 | # | Objetivo | #1 | #2 | Lectura |
 |---|---|---|---|---|
-| 1 | Infrastructure as Code (IaC) | — | — | — |
-| 2 | Terraform fundamentals | — | — | — |
-| 3 | Core workflow & CLI | — | — | — |
-| 4 | Read & write configuration | — | — | — |
-| 5 | Modules | — | — | — |
-| 6 | State management | — | — | — |
-| 7 | Maintain infrastructure | — | — | — |
-| 8 | HCP Terraform | — | — | — |
+| 1 | Infrastructure as Code (IaC) | 40% (2/5) | — | 🔴 punto débil |
+| 2 | Terraform fundamentals | 100% | — | 🟢 |
+| 3 | Core workflow & CLI | 100% | — | 🟢 |
+| 4 | Read & write configuration | 75% (9/12) | — | 🟡 |
+| 5 | Modules | 83% (5/6) | — | 🟢 |
+| 6 | State management | 100% | — | 🟢 |
+| 7 | Maintain infrastructure | 100% | — | 🟢 |
+| 8 | HCP Terraform | 83% (5/6) | — | 🟢 |
 
 ---
 
@@ -39,17 +39,26 @@
 |---|---|---|---|
 | _(none yet)_ | — | — | — |
 
+> Nota: el **objetivo 1 (IaC)** cayó al 40% en el test #1 (3 fallos en 3 temas distintos). Ninguna card individual llega a 3 fallos aún, pero **vigilar el objetivo** — si reaparece en el test #2 sube a 🔴.
+
 ### 🟡 Importante — 1–2 fallos
 
 | Card | Tema | Objetivo | Fallos |
 |---|---|---|---|
-| _(none yet)_ | — | — | — |
+| [01-iac/02](../cards/01-iac/02-iac-benefits.md) | Beneficios IaC: workflow consistente vs state/modules | 1 | 1 |
+| [01-iac/01](../cards/01-iac/01-what-is-iac.md) | Mutable vs immutable (config drift) | 1 | 1 |
+| [01-iac/03](../cards/01-iac/03-declarative-vs-imperative.md) | plan = preview / apply = ejecuta | 1 | 1 |
+| [07-maintain/02](../cards/07-maintain/02-depends-on.md) | `depends_on` no controla paralelismo | 4 | 1 |
+| [04-config/13](../cards/04-configuration/13-for_each-meta-argument.md) | `for_each` sobre list → `toset()` | 4 | 1 |
+| [06-state/08](../cards/06-state/08-securing-state-files.md) | Asegurar state: remote+lock; write-only ≠ "all secrets" | 4 | 1 |
+| [08-hcp/03](../cards/08-hcp-terraform/03-hcp-workspaces.md) | HCP: 3 workflows (VCS/CLI/API) vs 3 modes (Remote/Local/Agent) | 8 | 1 |
+| [05-modules/03](../cards/05-modules/03-module-sources-and-versioning.md) | GitHub module source shorthand | 5 | 1 |
 
 ### ⚠️ Sin card — candidatos a crear
 
 | Tema | Objetivo | Nota |
 |---|---|---|
-| _(none yet)_ | — | — |
+| _(none — todos los fallos tenían card)_ | — | — |
 
 ---
 
