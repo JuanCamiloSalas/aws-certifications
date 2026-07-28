@@ -16,7 +16,14 @@ A diferencia del **SAA** (escenarios: "¿qué servicio encaja?" → cards que ab
 
 ## Test reviews (`errors/test-review-N.md`)
 
-Una entrada por fallo. Cada opción es una línea `✅`/`❌ **opción** — por qué`, y la que el usuario marcó lleva el sufijo **`← my answer`** (también en las ✅ que sí acertó). No mezclar "esto fue lo que marqué" dentro de la explicación (nada de "I picked…"): la explicación es del distractor, el marcador es del usuario. Leyenda al principio del archivo.
+Una entrada por fallo. Cada opción es una línea con **etiqueta al principio**, no en prosa (nada de "I picked…"):
+
+- `✅ **Correct:** <opción> — por qué` → la correcta que **no** marcó.
+- `✅ **My answer:** <opción> — …` → correcta y marcada (típico en "select two/three").
+- `❌ **My answer:** <opción> — por qué está mal` → el fallo.
+- `❌ **Distractor:** <opción> — por qué está mal` → opción errónea que no marcó, pero cuya trampa vale explicar.
+
+Leyenda con las tres etiquetas al principio del archivo.
 
 ## Template y secciones
 
