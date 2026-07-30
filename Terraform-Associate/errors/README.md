@@ -9,6 +9,7 @@
 | Test | Fecha | Score | Review |
 |---|---|---|---|
 | #1 | 2026-07-25 | 85% (49/57) ✅ | [test-review-1.md](./test-review-1.md) |
+| #2 | 2026-07-28 | 80% (46/57) ✅ | [test-review-2.md](./test-review-2.md) |
 
 ---
 
@@ -18,14 +19,14 @@
 
 | # | Objetivo | #1 | #2 | Lectura |
 |---|---|---|---|---|
-| 1 | Infrastructure as Code (IaC) | 40% (2/5) | — | 🔴 punto débil |
-| 2 | Terraform fundamentals | 100% | — | 🟢 |
-| 3 | Core workflow & CLI | 100% | — | 🟢 |
-| 4 | Read & write configuration | 75% (9/12) | — | 🟡 |
-| 5 | Modules | 83% (5/6) | — | 🟢 |
-| 6 | State management | 100% | — | 🟢 |
-| 7 | Maintain infrastructure | 100% | — | 🟢 |
-| 8 | HCP Terraform | 83% (5/6) | — | 🟢 |
+| 1 | Infrastructure as Code (IaC) | 40% (2/5) | 100% (4/4) | 🟢 recuperado (era 🔴) |
+| 2 | Terraform fundamentals | 100% | 86% (6/7) | 🟢 |
+| 3 | Core workflow & CLI | 100% | 78% (7/9) | 🟡 bajó |
+| 4 | Read & write configuration | 75% (9/12) | 92% (12/13) | 🟢 subió |
+| 5 | Modules | 83% (5/6) | 63% (5/8) | 🔴 punto débil (bajó bajo 70%) |
+| 6 | State management | 100% | 86% (6/7) | 🟢 |
+| 7 | Maintain infrastructure | 100% | 75% (3/4) | 🟡 bajó |
+| 8 | HCP Terraform | 83% (5/6) | 60% (3/5) | 🔴 punto débil (bajó bajo 70%) |
 
 ---
 
@@ -37,28 +38,35 @@
 
 | Card | Tema | Objetivo | Fallos |
 |---|---|---|---|
-| _(none yet)_ | — | — | — |
+| [05-modules/03](../cards/05-modules/03-module-sources-and-versioning.md) | `source` shape (registry/local `./`/git) + `version` optional | 5 | 3 (T1·Q44 · T2·Q30 · T2·Q23) |
+| [01-iac/03](../cards/01-iac/03-declarative-vs-imperative.md) + [03-core/03](../cards/03-core-workflow/03-terraform-plan.md) | `plan` = preview/review · `apply` = ejecuta | 1·3 | 2 (T1·Q51 · T2·Q42) |
+| [08-hcp/01](../cards/08-hcp-terraform/01-what-is-hcp-terraform.md) + [03](../cards/08-hcp-terraform/03-hcp-workspaces.md) | HCP: **workflow** (CLI/VCS/API) vs **execution mode** (Remote/Local/Agent) — dónde/cómo corre | 8 | 2 (T1·Q21 · T2·Q21) |
 
-> Nota: el **objetivo 1 (IaC)** cayó al 40% en el test #1 (3 fallos en 3 temas distintos). Ninguna card individual llega a 3 fallos aún, pero **vigilar el objetivo** — si reaparece en el test #2 sube a 🔴.
+> **Módulos = punto débil #1 del T2** (63%, 3 fallos). La misma card (05-modules/03) cae en los dos simulacros. Repasar módulos en bloque antes del siguiente intento.
 
 ### 🟡 Importante — 1–2 fallos
 
 | Card | Tema | Objetivo | Fallos |
 |---|---|---|---|
-| [01-iac/02](../cards/01-iac/02-iac-benefits.md) | Beneficios IaC: workflow consistente vs state/modules | 1 | 1 |
-| [01-iac/01](../cards/01-iac/01-what-is-iac.md) | Mutable vs immutable (config drift) | 1 | 1 |
-| [01-iac/03](../cards/01-iac/03-declarative-vs-imperative.md) | plan = preview / apply = ejecuta | 1 | 1 |
-| [07-maintain/02](../cards/07-maintain/02-depends-on.md) | `depends_on` no controla paralelismo | 4 | 1 |
-| [04-config/13](../cards/04-configuration/13-for_each-meta-argument.md) | `for_each` sobre list → `toset()` | 4 | 1 |
-| [06-state/08](../cards/06-state/08-securing-state-files.md) | Asegurar state: remote+lock; write-only ≠ "all secrets" | 4 | 1 |
-| [08-hcp/03](../cards/08-hcp-terraform/03-hcp-workspaces.md) | HCP: 3 workflows (VCS/CLI/API) vs 3 modes (Remote/Local/Agent) | 8 | 1 |
-| [05-modules/03](../cards/05-modules/03-module-sources-and-versioning.md) | GitHub module source shorthand | 5 | 1 |
+| [05-modules/04](../cards/05-modules/04-module-inputs-outputs-scope.md) | Args del `module` block = **inputs** al hijo (no outputs/declaraciones) | 5 | 1 (T2·Q18) |
+| [08-hcp/06](../cards/08-hcp-terraform/06-run-triggers.md) | Run trigger = apply del source encola run en el destination | 8 | 1 (T2·Q45) |
+| [06-state/03](../cards/06-state/03-inspecting-state.md) | `show` (todo, sin args) vs `state show <addr>`; JSON es opt-in | 3 | 1 (T2·Q12) |
+| [06-state/07](../cards/06-state/07-removed-block.md) | Decomisionar = borrar bloque+apply; `removed` = mantener vivo | 7 | 1 (T2·Q46) |
+| [04-config/03](../cards/04-configuration/03-provider-block.md) | Dependencia de provider: ref en config / declaración / state (no plugin local) | 2 | 1 (T2·Q26) |
+| [04-config/05](../cards/04-configuration/05-variable-block.md) | `map(string)` (lookup por key) vs `object` (esquema fijo) | 4 | 1 (T2·Q39) |
+| [07-maintain/02](../cards/07-maintain/02-depends-on.md) | `depends_on` no controla paralelismo | 4 | 1 (T1·Q19) |
+| [04-config/13](../cards/04-configuration/13-for_each-meta-argument.md) | `for_each` sobre list → `toset()` | 4 | 1 (T1·Q27) |
+| [06-state/08](../cards/06-state/08-securing-state-files.md) | Asegurar state: remote+lock; write-only ≠ "all secrets" | 4 | 1 (T1·Q49) |
+| [01-iac/02](../cards/01-iac/02-iac-benefits.md) | Beneficios IaC: workflow consistente vs state/modules | 1 | 1 (T1·Q2) ✅ recuperado T2 |
+| [01-iac/01](../cards/01-iac/01-what-is-iac.md) | Mutable vs immutable (config drift) | 1 | 1 (T1·Q37) ✅ recuperado T2 |
+
+> IaC (objetivo 1) pasó de 40% → 100%: las tres cards de IaC del T1 se dan por **recuperadas** (el repaso funcionó); se dejan aquí como histórico.
 
 ### ⚠️ Sin card — candidatos a crear
 
 | Tema | Objetivo | Nota |
 |---|---|---|
-| _(none — todos los fallos tenían card)_ | — | — |
+| _(none — todos los fallos tienen card)_ | — | Run triggers (T2·Q45) → creada [08-hcp/06](../cards/08-hcp-terraform/06-run-triggers.md). |
 
 ---
 

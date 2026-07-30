@@ -1,6 +1,6 @@
 [![](https://img.shields.io/badge/<_Prev-7B42BC?style=for-the-badge)](./04-private-registry.md)
 [![](https://img.shields.io/badge/Block-175074?style=for-the-badge)](./README.md)
-[![](https://img.shields.io/badge/Back_to_Deck_>-7B42BC?style=for-the-badge)](../README.md)
+[![](https://img.shields.io/badge/Next_>-7B42BC?style=for-the-badge)](./06-run-triggers.md)
 
 # Policy Enforcement — Sentinel & OPA
 
@@ -46,4 +46,4 @@
 
 [![](https://img.shields.io/badge/<_Prev-7B42BC?style=for-the-badge)](./04-private-registry.md)
 [![](https://img.shields.io/badge/Block-175074?style=for-the-badge)](./README.md)
-[![](https://img.shields.io/badge/Back_to_Deck_>-7B42BC?style=for-the-badge)](../README.md)
+[![](https://img.shields.io/badge/Next_>-7B42BC?style=for-the-badge)](./06-run-triggers.md)
